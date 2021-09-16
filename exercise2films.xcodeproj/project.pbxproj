@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6385252426F3344600766AD8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385252326F3344600766AD8 /* DetailViewController.swift */; };
 		63A3208226F0BDF70062A13C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3208126F0BDF70062A13C /* AppDelegate.swift */; };
 		63A3208426F0BDF70062A13C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3208326F0BDF70062A13C /* SceneDelegate.swift */; };
 		63A3208626F0BDF70062A13C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3208526F0BDF70062A13C /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6385252326F3344600766AD8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		63A3207E26F0BDF70062A13C /* exercise2films.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exercise2films.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A3208126F0BDF70062A13C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A3208326F0BDF70062A13C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				63DE465E26F1E23C008EFE56 /* CustomImageView.swift */,
 				63DE466026F1FD50008EFE56 /* CategoryCollectionViewCell.swift */,
 				63DE466226F2033C008EFE56 /* FilmPosterCollectionViewCell.swift */,
+				6385252326F3344600766AD8 /* DetailViewController.swift */,
 			);
 			path = exercise2films;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				63A3208426F0BDF70062A13C /* SceneDelegate.swift in Sources */,
 				63DE466126F1FD50008EFE56 /* CategoryCollectionViewCell.swift in Sources */,
 				63DE465F26F1E23C008EFE56 /* CustomImageView.swift in Sources */,
+				6385252426F3344600766AD8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
