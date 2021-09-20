@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var duractionView: UIView!
     @IBOutlet weak var startsView: UIView!
+    @IBOutlet weak var backView: UIView!
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisTextView: UITextView!
@@ -25,6 +26,7 @@ class DetailViewController: UIViewController {
     
     var viewModel: DetailViewModelProtocol = DetailViewModel()
     var poster: UIImage?
+    var id: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +36,21 @@ class DetailViewController: UIViewController {
         
         makeCornerRadius()
         
-        if let id = viewModel.id {
+        if let id = id {
             viewModel.getMovie(id: id)
         }
     }
     
     func makeCornerRadius() {
-        titleView.layer.cornerRadius = 20
+        titleView.layer.cornerRadius = 25
         categoryView.layer.cornerRadius = 20
         duractionView.layer.cornerRadius = 20
         startsView.layer.cornerRadius = 20
+        backView.layer.cornerRadius = 20
+    }
+    
+    @IBAction func goBack(_ sender: UIButton) {
+        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 
 }

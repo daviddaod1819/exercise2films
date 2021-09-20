@@ -5,13 +5,11 @@
 //  Created by David on 17/9/21.
 //
 
-import UIKit
+import Foundation
 
 protocol MainViewModelProtocol {
     
-    var movies: [Int : [Search]] {get set}
-    var id: String? {get set}
-    var i: Int {get set}
+    var movies: [Int : [Search]] {get}
     var categories: [String] {get}
     
     func getMovies(_ search: String)
@@ -26,9 +24,7 @@ protocol MainViewModelDelegate {
 class MainViewModel {
     
     var movies: [Int: [Search]] = [:]
-    
-    var id: String?
-    
+        
     var i: Int = 0
     
     var categories: [String] = ["Action", "Adventure", "Sci-Fi", "Horror"]

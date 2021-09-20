@@ -8,30 +8,40 @@
 import UIKit
 
 class MainViewController: UIViewController  {
-      
     
     @IBOutlet weak var filmCollectionView: UICollectionView!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var recommendedFilmCollectionView: UICollectionView!
-        
+    @IBOutlet weak var movies1: UILabel!
+    @IBOutlet weak var movies2: UILabel!
+    @IBOutlet weak var errorMovies1: UILabel!
+    @IBOutlet weak var errorMovies2: UILabel!
+    
     var viewModel: MainViewModelProtocol = MainViewModel()
     var posters: [Int: [UIImage?]] = [:]
     var posterIndexes: [Int] = [0, 0]
+    var id: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.delegate = self
         
-        viewModel.getMovies("batman")
-        viewModel.getMovies("superman")
+        let search1 = "Batman"
+        let search2 = "Superman"
+        
+        movies1.text = "\(search1) movies"
+        movies2.text = "\(search2) movies"
+        
+        viewModel.getMovies(search1)
+        viewModel.getMovies(search2)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             let detailViewController = segue.destination
             if let detailViewController = detailViewController as? DetailViewController {
-                detailViewController.viewModel.id = viewModel.id
+                detailViewController.id = id
                 detailViewController.poster = posters[posterIndexes[0]]?[posterIndexes[1]]
             }
         }
@@ -44,12 +54,11 @@ class MainViewController: UIViewController  {
                 if let image = image {
                     
                     DispatchQueue.main.async {
-                        
-                        self.fillPosters(image: image, indexPath: indexPath, collectonView: collectonView)
+                    
+                        self.fillPosters(image: image.resizeImage(width: 280) ?? image, indexPath: indexPath, collectonView: collectonView)
                     }
                     
                 } else {
-                    print("Error")
                     
                     DispatchQueue.main.async {
                         
@@ -75,20 +84,37 @@ class MainViewController: UIViewController  {
     
 }
 
+
+//MARK: MainViewModelDelegate
 extension MainViewController: MainViewModelDelegate {
     
     func responseGetMovies( count: Int, i: Int ) {
         
+        if count == 0 {
+            
+            if i == 0 {
+                errorMovies1.isHidden = false
+                filmCollectionView.isHidden = true
+            } else {
+                errorMovies2.isHidden = false
+                recommendedFilmCollectionView.isHidden = true
+            }
+            
+            return
+        }
+        
         posters[i] = [UIImage?](repeating: nil, count: count)
         
         if i == 0 {
-            self.filmCollectionView.reloadData()
+            filmCollectionView.reloadData()
         } else {
-            self.recommendedFilmCollectionView.reloadData()
+            recommendedFilmCollectionView.reloadData()
         }
     }
 }
 
+
+//MARK: CollectionView
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -157,7 +183,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case "filmCollectionView":
                 let movies = viewModel.movies[0] ?? []
                 
-                viewModel.id = movies[indexPath.row].imdbID
+                id = movies[indexPath.row].imdbID
                 
                 posterIndexes = [0, indexPath.row]
                 
@@ -166,7 +192,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             case "filmPosterCollectionView":
                 let movies = viewModel.movies[1] ?? []
                 
-                viewModel.id = movies[indexPath.row].imdbID
+                id = movies[indexPath.row].imdbID
                 
                 posterIndexes = [1, indexPath.row]
                 

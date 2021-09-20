@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6362DA4626F88AB200CE2BD1 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6362DA4526F88AB200CE2BD1 /* UIImageExtension.swift */; };
 		6385252426F3344600766AD8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385252326F3344600766AD8 /* DetailViewController.swift */; };
 		6385252826F3498E00766AD8 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385252726F3498E00766AD8 /* Mappable.swift */; };
 		6385252A26F34A5900766AD8 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6385252926F34A5900766AD8 /* Connection.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6362DA4526F88AB200CE2BD1 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		6385252326F3344600766AD8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6385252726F3498E00766AD8 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		6385252926F34A5900766AD8 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				63A3208F26F0BDF90062A13C /* Info.plist */,
 				6385252726F3498E00766AD8 /* Mappable.swift */,
 				6385252926F34A5900766AD8 /* Connection.swift */,
+				6362DA4526F88AB200CE2BD1 /* UIImageExtension.swift */,
 			);
 			path = exercise2films;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				63A3208426F0BDF70062A13C /* SceneDelegate.swift in Sources */,
 				63881B6B26F4815E00977D96 /* MainViewModel.swift in Sources */,
 				63DE466126F1FD50008EFE56 /* CategoryCollectionViewCell.swift in Sources */,
+				6362DA4626F88AB200CE2BD1 /* UIImageExtension.swift in Sources */,
 				63881B6926F4738000977D96 /* Movie.swift in Sources */,
 				63DE465F26F1E23C008EFE56 /* CustomImageView.swift in Sources */,
 				6385252A26F34A5900766AD8 /* Connection.swift in Sources */,

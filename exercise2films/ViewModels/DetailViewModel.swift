@@ -5,20 +5,18 @@
 //  Created by David on 17/9/21.
 //
 
-import UIKit
+import Foundation
 
 protocol DetailDelegate {
     func responseGetMovie(movie: Movie)
 }
 
 protocol DetailViewModelProtocol {
-    var id: String? {get set}
     func getMovie(id: String)
     var delegate: DetailDelegate? {get set}
 }
 
 class DetailViewModel {
-    var id: String?
     var delegate: DetailDelegate?
     
 }
