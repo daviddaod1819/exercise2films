@@ -10,6 +10,7 @@ import UIKit
 class CategoryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var categoryStackView: UIStackView!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
